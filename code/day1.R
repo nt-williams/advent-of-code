@@ -2,7 +2,7 @@
 
 library(purrr)
 
-expenses <- read.table(file.path("data", "entry"))
+expenses <- read.table(file.path("data", "day1"))
 
 # puzzle 1 ----------------------------------------------------------------
 

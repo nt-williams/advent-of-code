@@ -24,6 +24,3 @@ check_psw2 <- function(rule, target, pw) {
 }
 
 cat("Part 2 answer is:", sum(purrr::pmap_lgl(psw, check_psw2)), "\n")
-
-
-

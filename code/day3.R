@@ -13,17 +13,16 @@ rule_factory <- function(rule_i, rule_j) {
 }
 
 start <- c(1, 1)
-counter <- c()
+counter <- 0
 end <- nrow(bitmap)
 
 move <- function(map, coord, counter, end, .rule) {
   new_pos <- .rule(coord[1], coord[2], ncol(map))
-  counter <- append(counter, map[new_pos[1], new_pos[2]])
-  
+  counter <- counter + map[new_pos[1], new_pos[2]]
   if (.rule(new_pos[1], new_pos[2], ncol(map))[1] <= end) {
     return(move(map, new_pos, counter, end, .rule))
   }
-  sum(counter)
+  counter
 }
 
 # puzzle 1

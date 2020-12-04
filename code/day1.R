@@ -17,3 +17,4 @@ rmn <- (2020 - comb2_sums)
 fnd <- rmn %in% expenses$V1
 vals <- data.frame(comb2[which(fnd), ], Var3 = rmn[fnd])
 paste("The answer is:", Reduce(`*`, vals[1, ]))
+

@@ -65,6 +65,10 @@ check_pid <- function(pid) {
   TRUE
 }
 
+check_cid <- function() {
+  TRUE
+}
+
 valid_passports <- function(passports) {
   fields <- c("byr:", "iyr:", "eyr:", "hgt:", "hcl:", "ecl:", "pid:")
   p1 <- p2 <- rep(NA, length(passports))
@@ -72,16 +76,23 @@ valid_passports <- function(passports) {
     p1[i] <- all(unlist(lapply(fields, function(x) grepl(x, passports[i]))))
     if (p1[i]) {
       params <- unlist(strsplit(passports[[i]], " "))
-      p2[i] <- all(unlist(lapply(params, function(x) {
-        switch(sub(":.*", "", x), 
-               byr = check_byr(x), 
-               iyr = check_iyr(x), 
-               eyr = check_eyr(x), 
-               hgt = check_hgt(x), 
-               hcl = check_hcl(x), 
-               ecl = check_ecl(x), 
-               pid = check_pid(x))
-      })))
+      valid <- TRUE
+      j <- 1
+      while (valid && j <= length(params)) {
+        valid <- switch(
+          sub(":.*", "", params[j]),
+          byr = check_byr(params[j]),
+          iyr = check_iyr(params[j]),
+          eyr = check_eyr(params[j]),
+          hgt = check_hgt(params[j]),
+          hcl = check_hcl(params[j]),
+          ecl = check_ecl(params[j]),
+          pid = check_pid(params[j]),
+          cid = check_cid()
+        )
+        j <- j + 1
+      }
+      p2[i] <- valid
     } else {
       p2[i] <- FALSE
     }
@@ -90,4 +101,5 @@ valid_passports <- function(passports) {
   cat("Puzzle 2:", sum(p2), "\n")
 }
 
-valid_passports(read_batch("data/day4"))
+batch <- read_batch("data/day4")
+valid_passports(batch)

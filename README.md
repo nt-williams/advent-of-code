@@ -4,10 +4,10 @@ Solution speeds:
 
 | Day | R         | Julia        |
 |-----|-----------|--------------|
-| 1   | 0.077 sec | 0.003721 sec |
-| 2   | 0.099 sec | 0.109703 sec |
-| 3   | 0.051 sec | 0.051034 sec |
-| 4   | 0.131 sec |              |
+| 1   | 0.046 sec | 0.003721 sec |
+| 2   | 0.064 sec | 0.109703 sec |
+| 3   | 0.008 sec | 0.051034 sec |
+| 4   | 0.048 sec |              |
 
 
-*Excludes loading data. Julia solution excludes compile time.*
+*Excludes loading data. R solution based on median time of 100 runs. Julia solution excludes compile time.*

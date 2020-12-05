@@ -14,7 +14,7 @@ ids <- sort(find_seat("data/day5"))
 max(ids)
 
 # puzzle 2
-for (i in 1:(length(x) - 1)) {
+for (i in 1:(length(ids) - 1)) {
   if (ids[i + 1] - ids[i] == 2) {
     print(ids[i] + 1)
   }

@@ -19,8 +19,8 @@ answers = read_answers("data/day6")
 # puzzle 2
 c = 0
 for a in answers
-	letters = split(join(a), "")
-	for i in unique(letters), l in length(a)
+	letters, l = split(join(a), ""), length(a)
+	for i in unique(letters)
 		global c += count(x -> x == i, letters) == l
 	end
 end

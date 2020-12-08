@@ -1,6 +1,6 @@
 # Advent of Code
 
-> "The solutions all are simple... after you've already arrived at them. But they're simple only when you already know what they are.""
+> "The solutions all are simple... after you've already arrived at them. But they're simple only when you already know what they are."
 
 Solution speeds:
 

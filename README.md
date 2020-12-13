@@ -17,5 +17,7 @@ Solution speeds:
 | 9   | 0.265 sec | 0.002075 sec |
 | 10  | 0.002 sec | 0.000193 sec |
 | 11  | 20.84 sec | 1.020271 sec |
+| 12  |           | 0.000843 sec |
+| 13  |           | 0.000777 sec |
 
 *Excludes loading data (sometimes). R solution based on median time of 100 runs (sometimes). Julia solution excludes compile time.*

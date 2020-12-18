@@ -7,7 +7,7 @@ function decoderV1(file)
     memory = Dict{}()
     mask = String
     for line in eachindex(input)
-        if match(r"mask = ", input[line]) != nothing
+        if match(r"mask = ", input[line]) !== nothing
             mask = match(r"(mask = )(.+)", input[line]).captures[2]
             continue
         end
@@ -35,7 +35,7 @@ function decoderV2(file)
     memory = Dict{}()
     mask = String
     for line in eachindex(input)
-        if match(r"mask = ", input[line]) != nothing
+        if match(r"mask = ", input[line]) !== nothing
             mask = match(r"(mask = )(.+)", input[line]).captures[2]
             continue
         end

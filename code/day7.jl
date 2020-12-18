@@ -17,7 +17,7 @@ function read_rules(file)
 end
 
 function contains_gold(rules, bag)
-	 if rules[bag] == nothing
+	 if rules[bag] === nothing
 		 return false
 	 end
 	 for contents in collect(keys(rules[bag]))
@@ -30,7 +30,7 @@ function contains_gold(rules, bag)
 
  function count_bags(rules, color)
      contents = rules[color]
-     if contents == nothing
+     if contents === nothing
          return 0
      else
          return sum([

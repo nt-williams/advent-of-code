@@ -47,7 +47,7 @@ function check_fields(passport::Dict, field)
 		return 2020 ≤ parse(Int, value) ≤ 2030
 	elseif field == "hgt"
 		m = match(r"(\d+)(in|cm)", value)
-		if m == nothing
+		if m === nothing
 			return false
 		end
 		ht, ms = match(r"(\d+)(in|cm)", value).captures
